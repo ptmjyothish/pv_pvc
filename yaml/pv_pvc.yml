@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: testusr2-prod-app-pv
+  name: prod-mysql-master-pv
   namespace: stage
 spec:
   capacity:
@@ -11,12 +11,12 @@ spec:
     - ReadWriteMany
   nfs:
     server: 10.146.0.4
-    path: "/opt/NFS_SHARE/prod1/testusr2/data/app"
+    path: "/opt/NFS_SHARE/prod1/prod_mysql_master"
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: testusr2-prod-app-pvc
+  name: prod-mysql-master-pvc
   namespace: prod
 spec:
   accessModes:
